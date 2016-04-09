@@ -12,16 +12,16 @@ $(function() {
     // }
 
     buzz.defaults.formats = ['wav'];
-    var xyloSounds = [];
-    var sounds = ['a', 'b', 'c', 'c2', 'd1', 'e1', 'f', 'g'];
+    var xyloSounds        = [];
+    var sounds            = ['a', 'b', 'c', 'c2', 'd1', 'e1', 'f', 'g'];
 
     for (var i = 0; i < sounds.length; i++) {
         var sound = sounds[i];
         xyloSounds.push(new buzz.sound('audio/' + sound));
     }
 
-    var starRatio = 228/225;
-    var countStars = getRandomInt(7, 20);
+    var starRatio        = 228/225;
+    var countStars       = getRandomInt(7, 20);
     var securityZoneSize = getRandomInt(10, 100);
 
     divideArea(securityZoneSize, countStars);
@@ -55,27 +55,29 @@ $(function() {
     function setSquare(topCoord, leftCoord, $elementSide) {
 
         var newSquare = document.createElement('div');
-        var rotateDeg = getRandomInt(10, 360);
+        var rotateDeg = getRandomInt(0, 360);
+        var scale     = Math.random() + 0.1;
+
         $(newSquare).addClass('star');
         $(newSquare).css({
-            'top': topCoord + 100 * getRandom(),
+            'top': topCoord + 10 * getRandom(),
             'left': leftCoord + 10 * getRandom(),
             'width': $elementSide * starRatio,
-            'height': $elementSide,            
-            '-ms-transform': 'rotate(' + rotateDeg + 'deg)',
-            '-webkit-transform': 'rotate(' + rotateDeg + 'deg)',
-            'transform': 'rotate(' + rotateDeg + 'deg)'
+            'height': $elementSide,
+            '-ms-transform': 'rotate(' + rotateDeg + 'deg)' + 'scale(' + scale + ')',
+            '-webkit-transform': 'rotate(' + rotateDeg + 'deg)' + 'scale(' + scale + ')',
+            'transform': 'rotate(' + rotateDeg + 'deg)' + 'scale(' + scale + ')'
         });
-        console.log(getRandomInt(10, 360) + 'deg');
+
         $('.sky').append(newSquare);
     }
 
     function divideArea(securityZoneSize, numberOfSquares) {
-        var $width = $(window).width() - securityZoneSize;
-        var $height = $(window).height() - securityZoneSize;
-        var $square = $width * $height;
+        var $width         = $(window).width() - securityZoneSize;
+        var $height        = $(window).height() - securityZoneSize;
+        var $square        = $width * $height;
         var $elementSquare = parseInt($square / numberOfSquares);
-        var $elementSide = parseInt(Math.sqrt($elementSquare));
+        var $elementSide   = parseInt(Math.sqrt($elementSquare));
 
         for (var i = securityZoneSize; i < $width - $elementSide; i+= $elementSide) {
             for (var j = securityZoneSize; j < $height - $elementSide; j+= $elementSide) {
