@@ -1,6 +1,6 @@
 $(function() {
 
-    FastClick.attach(document.body);
+    // FastClick.attach(document.body);
 
     // $.fn.checkPosition = function() {
     //     var top = this[0].getBoundingClientRect().top;
@@ -60,7 +60,8 @@ $(function() {
             'top': topCoord + 100 * getRandom(),
             'left': leftCoord + 10 * getRandom(),
             'width': $elementSide * starRatio,
-            'height': $elementSide
+            'height': $elementSide,
+            'transform-rotate': getRandomInt(10, 360) + 'deg'
         });
         $('.sky').append(newSquare);
     }
