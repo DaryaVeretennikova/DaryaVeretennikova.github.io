@@ -1,5 +1,7 @@
 $(function() {
 
+    FastClick.attach(document.body);
+
     // $.fn.checkPosition = function() {
     //     var top = this[0].getBoundingClientRect().top;
     //     var left = this[0].getBoundingClientRect().left;
