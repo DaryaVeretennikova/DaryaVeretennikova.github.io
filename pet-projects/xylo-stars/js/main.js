@@ -55,14 +55,18 @@ $(function() {
     function setSquare(topCoord, leftCoord, $elementSide) {
 
         var newSquare = document.createElement('div');
+        var rotateDeg = getRandomInt(10, 360);
         $(newSquare).addClass('star');
         $(newSquare).css({
             'top': topCoord + 100 * getRandom(),
             'left': leftCoord + 10 * getRandom(),
             'width': $elementSide * starRatio,
-            'height': $elementSide,
-            'transform-rotate': getRandomInt(10, 360) + 'deg'
+            'height': $elementSide,            
+            '-ms-transform': 'rotate(' + rotateDeg + 'deg)',
+            '-webkit-transform': 'rotate(' + rotateDeg + 'deg)',
+            'transform': 'rotate(' + rotateDeg + 'deg)'
         });
+        console.log(getRandomInt(10, 360) + 'deg');
         $('.sky').append(newSquare);
     }
 
