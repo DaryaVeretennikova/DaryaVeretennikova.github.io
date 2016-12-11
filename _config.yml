@@ -2,7 +2,7 @@
 
 title: Infusive web
 locale: en_US
-description: Blog about web development and continous self-education
+description: Blog about web development (mainly front-end) and continuous self-education
 logo: site-logo.png
 search: true
 url: http://daryaveretennikova.github.io
@@ -40,9 +40,9 @@ owner:
   avatar: bio-photo.jpg
   email: darya0veretennikova@gmail.com
   disqus-shortname:
-  twitter: #darya0wood
+  twitter: darya0wood
   facebook: #username
-  github: #username
+  github: DaryaVeretennikova
   stackexchange: #http://stackoverflow.com/users/123456/username
   linkedin: #username
   instagram: #username
